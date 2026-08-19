@@ -31,18 +31,20 @@ function AddBeerPage() {
   // 3. Once the beer is created, navigate the user to the page showing the list of all beers.
   const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      await axios.post("https://beers-api.edu.ironhack.com/beers/new", {
-        name: name,
-        tagline: tagline,
-        description: description,
-        image_url: imageUrl,
-        first_brewed: firstBrewed,
-        brewers_tips: brewersTips,
-        attenuation_level: Number(attenuationLevel),
-        contributed_by: contributedBy
-      });
+      // await axios.post("https://beers-api.edu.ironhack.com/beers/new", {
+      //   name: name,
+      //   tagline: tagline,
+      //   description: description,
+      //   image_url: imageUrl,
+      //   first_brewed: firstBrewed,
+      //   brewers_tips: brewersTips,
+      //   attenuation_level: Number(attenuationLevel),
+      //   contributed_by: contributedBy
+      // });
 
       navigate("/beers");
     } catch (error) {
