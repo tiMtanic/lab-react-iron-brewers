@@ -35,16 +35,16 @@ function AddBeerPage() {
     e.preventDefault();
 
     try {
-      // await axios.post("https://beers-api.edu.ironhack.com/beers/new", {
-      //   name: name,
-      //   tagline: tagline,
-      //   description: description,
-      //   image_url: imageUrl,
-      //   first_brewed: firstBrewed,
-      //   brewers_tips: brewersTips,
-      //   attenuation_level: Number(attenuationLevel),
-      //   contributed_by: contributedBy
-      // });
+      await axios.post("https://beers-api.edu.ironhack.com/beers/new", {
+        name: name,
+        tagline: tagline,
+        description: description,
+        image_url: imageUrl,
+        first_brewed: firstBrewed,
+        brewers_tips: brewersTips,
+        attenuation_level: Number(attenuationLevel),
+        contributed_by: contributedBy
+      });
 
       navigate("/beers");
     } catch (error) {
